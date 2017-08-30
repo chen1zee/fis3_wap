@@ -1,0 +1,31 @@
+<script id="widgetTestComponent" type="text/html">
+<div class="widget-test-component">
+  <p class="title">I am a component</p>
+  <p class="name">{{name}}</p>
+  <p class="title">address</p>
+  <ul>
+    {{each addressList address index}}
+    <li>
+      <p class="title">{{address.name}}</p>
+      <p class="name">{{address.belong}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+</script>
+
+<style>
+.widget-test-component {
+
+}
+.widget-test-component .title {
+  font-size: 20px;
+  line-height: 40px;
+  color: cyan;
+}
+.widget-test-component .name {
+  font-size: 14px;
+  line-height: 20px;
+  color: red;
+}
+</style>

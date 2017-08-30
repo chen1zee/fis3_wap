@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'pingfang_scmedium';
+  src: url('/src/source/font/PingFangMedium/pingfangmedium-webfont.woff2') format('woff2'),
+  url('/src/source/font/PingFangMedium/pingfangmedium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  -ms-overflow-style:none;
+  overflow:-moz-scrollbars-none;
+}
+html::-webkit-scrollbar{
+  width:0
+}
+html,body {
+  height: 100%;
+  font-family: pingfang_scmedium;
+  overflow: scroll;
+}
+
+.app-first-wrap {
+  box-sizing: border-box;
+  padding: 0 8px;
+  min-height: 100%;
+  background: url("/src/source/img/boardshare/bg-@3x.png") no-repeat top left;
+  background-size: 100% 100%;
+}
+
+/*  头部  */
+.top-header {
+  padding: 12px 0;
+  text-align: center;
+  img {
+    width: 75px;
+    border-radius: 4px;
+  }
+  p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
+
+/*  内容  */
+.content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 8px 110px;
+  max-width: 700px;
+  margin: 0 auto;
+  @imgWidth: 52px;
+  @boardTypeWidth: 52px;
+  @wrapPadding: 0;
+  .board-info {
+    overflow: hidden;
+    padding: 16px @boardTypeWidth + @wrapPadding 16px @imgWidth + @wrapPadding;
+    > img {
+      float: left;
+      margin-left: -@imgWidth;
+      width: @imgWidth;
+    }
+    .word-wrap {
+      box-sizing: border-box;
+      float: left;
+      width: 100%;
+      padding-left: 5px;
+      > span {
+        vertical-align: top;
+      }
+      .game-name {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        vertical-align: top;
+      }
+      .badge {
+        display: inline-block;
+        margin-left: 4px;
+        font-size: 8px;
+        line-height: 12px;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        padding: 1px 2px;
+        &.safe {
+          color: #f78989;
+          border-color: #f78989;
+        }
+        &.gps {
+          color: #6cd8c4;
+          border-color: #6cd8c4;
+        }
+        &.ips {
+          color: #58d6ff;
+          border-color: #58d6ff;
+        }
+      }
+      .tax {
+        font-size: 12px;
+        line-height: 28px;
+        color: #8d8d8d;
+      }
+    }
+    .board-type {
+      float: left;
+      display: inline-block;
+      margin-right: -@boardTypeWidth;
+      width: @boardTypeWidth;
+      font-size: 14px;
+      line-height: 52px;
+      color: #6dd8c4;
+      text-align: center;
+    }
+  }
+  .board-blind-people {
+    @leftRightWidth: 70px;
+    overflow: hidden;
+    padding: 0 @leftRightWidth;
+    margin-bottom: 24px;
+    .side {
+      float: left;
+      width: @leftRightWidth;
+      text-align: center;
+      .title {
+        padding-top: 5px;
+        padding-bottom: 7px;
+        font-size: 13px;
+        line-height: 13px;
+        color: #8d8d8d;
+      }
+      .para {
+        font-size: 16px;
+        line-height: 24px;
+        color: #666;
+        font-weight: 600;
+      }
+    }
+    .people {
+      margin-left: -@leftRightWidth;
+    }
+    .time {
+      margin-right: -@leftRightWidth;
+    }
+    .blind {
+      float: left;
+      width: 100%;
+      text-align: center;
+      color: #d2ab25;
+      .title {
+        padding-bottom: 7px;
+        font-size: 18px;
+        line-height: 18px;
+      }
+      .para {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+  }
+  .word-card {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 14px;
+    margin-bottom: 6px;
+    &.assign {
+      margin-bottom: 24px;
+    }
+    .title {
+      font-size: 15px;
+      line-height: 15px;
+      margin-bottom: 10px;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 3px;
+        height: 12px;
+        background-color: #1bab1a;
+        margin-right: 5px;
+      }
+    }
+    .para {
+      font-size: 13px;
+      line-height: 18px;
+      color: #a3a3a3;
+      padding: 0 36px 0 8px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+
+  .sign-button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid #7acc7a;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    color: #1bab1a;
+    font-size: 15px;
+    line-height: 35px;
+    &:active{
+      outline:0;
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 15px;
+    .download-link-wrap {
+      margin-bottom: 10px;
+      text-align: center;
+      color: #939393;
+      font-size: 12px;
+      a {
+        color: #2e8bf3;
+        font-size: 12px;
+      }
+    }
+    > .footer-p {
+      padding-bottom: 7px;
+      text-align: center;
+      font-size: 12px;
+      color: #939393;
+    }
+    @imgHeight: 14px;
+    > .footer-div {
+      font-size: 11px;
+      color: #bebebe;
+      text-align: center;
+      > img {
+        position: relative;
+        top: -2px;
+        width: @imgHeight;
+        vertical-align: middle;
+      }
+      > span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/*  蒙层  */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    vertical-align: middle;
+  }
+  .cell {
+    position: relative;
+    top: -10px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 84%;
+    padding: 13px 13px 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    .header {
+      overflow: hidden;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      > p {
+        float: left;
+        width: 100%;
+        text-align: left;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      > img {
+        float: left;
+        margin-right: -16px;
+        width: 16px;
+      }
+    }
+    .cell-content {
+      display: none;
+      > span {
+        font-size: 15px;
+        line-height: 30px;
+      }
+      > img {
+        width: 17px;
+      }
+    }
+  }
+}

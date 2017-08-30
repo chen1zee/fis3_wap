@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="import" href="/src/widget/commonHeader.html?__inline">
+  <!--  判断pc || 手机 浏览器  -->
+  <script src="/src/lib-js/judgeNavigator.js"></script><!--ignore-->
+  <link rel="stylesheet" href="/src/source/iconfont/iconfont.css"><!--ignore-->
+  <link rel="stylesheet" href="/src/style/appshare/index.less">
+  <title>天使生活官方下载</title>
+</head>
+<body>
+<!--  加载动画  -->
+<link id="widgetLoading" rel="import" href="/src/widget/loading.html?__inline">
+
+<!--  提示 在浏览器打开  -->
+<div id="tipOpenBrowser" class="tip-open-browser">
+  <span class="tip-word">
+    点击右上角菜单
+    <br>
+    在 <img src="/src/source/img/appCustomShare/mobile/safari@2x.png" alt="">
+    Safari中打开并安装应用
+  </span>
+  <img class="tip-arrow" src="/src/source/img/appCustomShare/mobile/arrow@3x.png" alt="">
+</div>
+<!--  app首屏内容  -->
+<div id="appFirstWrap" class="app-first-wrap">
+  <div class="cell">
+    <!--  app 图标  -->
+    <div class="app-icon-wrap">
+      <img src="/src/source/img/appCustomShare/mobile/APPlogo-web@3x.png" alt="">
+    </div>
+    <!--  app 标题  -->
+    <p class="app-title">客服端</p>
+    <p class="app-logo">
+      <i class="iconfont icon-apple22"></i>
+      <span>IOS端</span>
+    </p>
+    <div id="downloadBtnWrap" class="download-btn-wrap">
+      <!--<button id="downloadBtn"> 下载安装 </button>-->
+      <a href="#" id="downloadBtn2" class="download-btn"></a>
+      <div id="downloadBtn" class="download-btn" style="display: none;"></div>
+      <!--<img id="downloadBtn" src="./source/img/mobile/download@3x.png" alt="">-->
+      <p id="androidDisabledTip" class="android-disabled-tip">只支持IOS设备</p>
+    </div>
+    <!--  版本信息  -->
+    <div id="releaseInfo" class="release-info">
+      <p>正在获取版本信息</p>
+      <!--<p>1.0 (Build 3.3) - 8.83 MB</p>-->
+      <!--<p>更新于: 2017-06-29 22:12</p>-->
+    </div>
+  </div>
+</div>
+
+<script>
+  require('/src/modules/program/customshare/index');
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="import" href="/src/widget/commonHeader.html?__inline">
+  <link rel="stylesheet" href="/src/source/iconfont/iconfont.css"><!--ignore-->
+  <link rel="stylesheet" href="/src/style/boardshare/index.less">
+  <title>局型登记</title>
+</head>
+<body>
+<!--  app首屏内容  -->
+<div id="appFirstWrap" class="app-first-wrap">
+  <!--  头部  -->
+  <div id="topHeader" class="top-header">
+    <img src="/src/source/img/boardshare/head1@3x.png" alt="">
+    <p>China poker</p>
+  </div>
+  <!--  内容  -->
+  <div class="content">
+    <!--  牌局简介  -->
+    <div id="boardInfo" class="board-info">
+      <img src="/src/source/img/boardshare/head2@3x.png" alt="">
+      <div class="word-wrap">
+        <span class="game-name">德扑圈</span>
+        <span style="display: none;" class="badge safe">保险</span>
+        <span style="display: none;" class="badge gps">GPS限制</span>
+        <span style="display: none;" class="badge ips">IPS限制</span>
+        <p class="tax"></p>
+      </div>
+      <p class="board-type"></p>
+    </div>
+    <!--  级别，人数等  -->
+    <div id="boardBlindPeople" class="board-blind-people">
+      <div class="side people">
+        <p class="title">人数</p>
+        <!--6-->
+        <p class="para"></p>
+      </div>
+      <div class="blind">
+        <p class="title">级别</p>
+        <!--50/100(50)-->
+        <p class="para"></p>
+      </div>
+      <div class="side time">
+        <p class="title">全局时间</p>
+        <!--6小时-->
+        <p class="para"></p>
+      </div>
+    </div>
+    <!--  牌局描述  -->
+    <div class="word-card describe">
+      <p class="title">牌局描述</p>
+      <p id="describePara" class="para">无牌局描述</p>
+    </div>
+    <!--  报名人数  -->
+    <div id="assign" class="word-card assign">
+      <p class="title">当前报名人数： 人</p>
+      <p class="para">已入人数：  人</p>
+    </div>
+    <!--  报名按钮  -->
+    <button id="signButton" class="sign-button">
+      报&nbsp;&nbsp;名
+    </button>
+    <!--  页脚  -->
+    <div id="footer" class="footer">
+      <!--  下载App  -->
+      <div class="download-link-wrap">
+        若未安装天使生活，请
+        <a id="downloadLink" href="https://www.gzgoodwill.com/version-web/" class="download-link">
+          前往下载
+        </a>
+      </div>
+      <p class="footer-p">
+        点击量： <span id="sharetimes"></span> 次
+        <!--&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;-->
+        <!--下载量： <span id="downloadCount"></span> 次-->
+      </p>
+      <div class="footer-div">
+        <img src="/src/source/img/boardshare/logo@3x.png" alt="">
+        <span>天使生活</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  提示蒙层  -->
+<div id="mask" class="mask">
+  <div class="cell">
+    <div class="header">
+      <p>提示</p>
+      <img id="closeMask" src="/src/source/img/boardshare/close@3x.png" alt="">
+    </div>
+    <div id="openSafariTip" class="cell-content">
+      <span>点击右上角菜单，在 </span>
+      <br>
+      <img src="/src/source/img/boardshare/safari@3x.png" alt="">
+      <span>safari中打开。</span>
+    </div>
+    <div id="androidTip" class="cell-content">
+      <span>只支持IOS设备</span>
+    </div>
+  </div>
+</div>
+
+<!--  templates  -->
+<script id="topHeaderTemplate" type="text/html">
+  <img src="{{clubIcon}}" alt="">
+  <p>{{clubName}}</p>
+</script>
+<script id="boardInfoTemplate" type="text/html">
+  <img src="/src/source/img/boardshare/head2@3x.png" alt="">
+  <div class="word-wrap">
+    <span class="game-name">{{gameName}}</span>
+    {{if (insuranceStatus === 'YES')}}<span class="badge safe">保险</span>{{/if}}
+    {{if (gpsLimit === 'ON')}}<span class="badge gps">GPS限制</span>{{/if}}
+    {{if (ipLimit === 'ON')}}<span class="badge ips">IPS限制</span>{{/if}}
+    <p class="tax">服务费：{{settleData}}</p>
+  </div>
+  <p class="board-type">{{boardTypeDisplay}}</p>
+</script>
+<script id="boardBlindPeopleTemplate" type="text/html">
+  <div class="side people">
+    <p class="title">人数</p>
+    <p class="para">{{peopleNumber}}</p>
+  </div>
+  <div class="blind">
+    <p class="title">级别</p>
+    <p class="para">{{blinds}}({{ante}})</p>
+  </div>
+  <div class="side time">
+    <p class="title">全局时间</p>
+    <p class="para">{{durationStr}}小时</p>
+  </div>
+</script>
+<script id="assignTemplate" type="text/html">
+  <p class="title">当前报名人数：{{nowQueueNum}} 人</p>
+  <p class="para">已入人数： {{startNumber}} 人</p>
+</script>
+
+<script>
+  require('/src/modules/program/boardshare/index');
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'pingfang_scmedium';
+  src: url('/src/source/font/PingFangMedium/pingfangmedium-webfont.woff2') format('woff2'),
+  url('/src/source/font/PingFangMedium/pingfangmedium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+html,body {
+  font-family: pingfang_scmedium;
+  height: 100%;
+}
+.wrap {
+  overflow: hidden;
+  min-height: 100%;
+  background: url("/src/source/img/appCustomShare/pc/webwing@3x.png") no-repeat 0 0;
+  background-size: 100%;
+  background-color: #fff;
+  .download {
+    margin-top: 270px;
+    text-align: center;
+    .logo-cell {
+      display: inline-block;
+      vertical-align: middle;
+      &:nth-of-type(1) {
+        margin-right: 42px;
+      }
+      > img {
+        display: block;
+        width: 140px;
+      }
+      p {
+        margin-top: 24px;
+        color: #0c1414;
+        font-size: 30px;
+        line-height: 32px;
+      }
+    }
+    .qr-cell {
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      &:hover {
+        .qr-code {
+          border: 20px solid #EFF2F2;
+          border-radius: 26px;
+          transform: scale(1.5, 1.5);
+        }
+      }
+      .qr-code {
+        position: relative;
+        width: 130px;
+        height: 130px;
+        transition: transform 0.3s;
+        transform-origin: left bottom;
+      }
+      p {
+        font-size: 16px;
+        color: #434343;
+        line-height: 23px;
+        &:nth-of-type(1) {
+          margin-top: 4px;
+        }
+        > img {
+          width: 14px;
+          vertical-align: baseline;
+        }
+        span {
+          display: inline-block;
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+  .release-info {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    p {
+      margin-top: 0;
+      margin-bottom: 4px;
+      color: #B7BABB;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}
